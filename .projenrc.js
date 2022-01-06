@@ -29,6 +29,7 @@ const project = new cdktf.ConstructLibraryCdktf({
     'terraform*',
     'yarn.lock',
   ],
+  devContainer: true,
   keywords: ['cdktf', 'lorex', 'camera', 'object', 'notification'],
   license: 'GPL-3.0-or-later',
   name: 'cdktf-lorex-camera-object-notification',

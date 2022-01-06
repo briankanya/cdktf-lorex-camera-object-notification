@@ -75,7 +75,7 @@
   ],
   "main": "lib/index.js",
   "license": "GPL-3.0-or-later",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "jest": {
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.ts?(x)",
