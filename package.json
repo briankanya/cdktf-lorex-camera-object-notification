@@ -16,6 +16,7 @@
     "eslint": "npx projen eslint",
     "package": "npx projen package",
     "package-all": "npx projen package-all",
+    "package:go": "npx projen package:go",
     "package:js": "npx projen package:js",
     "package:python": "npx projen package:python",
     "post-compile": "npx projen post-compile",
@@ -119,7 +120,13 @@
   "jsii": {
     "outdir": "dist",
     "targets": {
-      "python": {}
+      "python": {
+        "distName": "cdktf-lorex-camera-object-notification",
+        "module": "cdktf_lorex_camera_object_notification"
+      },
+      "go": {
+        "moduleName": "ithub.com/briankanya/cdktf-lorex-camera-object-notification"
+      }
     },
     "tsc": {
       "outDir": "lib",

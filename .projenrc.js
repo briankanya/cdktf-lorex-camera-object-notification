@@ -32,7 +32,13 @@ const project = new cdktf.ConstructLibraryCdktf({
   keywords: ['cdktf', 'lorex', 'camera', 'object', 'notification'],
   license: 'GPL-3.0-or-later',
   name: 'cdktf-lorex-camera-object-notification',
-  publishToPypi: true,
+  publishToPypi: {
+    distName: 'cdktf-lorex-camera-object-notification',
+    module: 'cdktf_lorex_camera_object_notification',
+  },
+  publishToGo: {
+    moduleName: 'ithub.com/briankanya/cdktf-lorex-camera-object-notification',
+  },
   releaseToNpm: true,
   releaseTrigger: ReleaseTrigger.continuous(),
   repositoryUrl: 'https://github.com/briankanya/cdktf-lorex-camera-object-notification.git',

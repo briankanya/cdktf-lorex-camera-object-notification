@@ -18,3 +18,4 @@ pull_request_rules:
       - status-success=build
       - status-success=package-js
       - status-success=package-python
+      - status-success=package-go
