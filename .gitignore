@@ -31,6 +31,17 @@ jspm_packages/
 *.tgz
 .yarn-integrity
 .cache
+**/*.d.ts
+**/*.js
+.DS_Store
+.gen
+.terraform*
+.vscode
+cdktf.json
+cdktf.out
+package-lock.json
+terraform*
+yarn.lock
 !/.projenrc.js
 /test-reports/
 junit.xml
@@ -50,4 +61,4 @@ junit.xml
 .jsii
 tsconfig.json
 !/API.md
-!/.github/workflows/upgrade-main.yml
+!/.github/workflows/upgrade-master.yml
