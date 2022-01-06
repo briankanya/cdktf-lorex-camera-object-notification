@@ -36,7 +36,7 @@ const project = new cdktf.ConstructLibraryCdktf({
     module: 'cdktf_lorex_camera_object_notification',
   },
   publishToGo: {
-    moduleName: 'ithub.com/briankanya/cdktf-lorex-camera-object-notification',
+    moduleName: 'github.com/briankanya/cdktf-lorex-camera-object-notification',
   },
   releaseToNpm: true,
   releaseTrigger: ReleaseTrigger.continuous(),

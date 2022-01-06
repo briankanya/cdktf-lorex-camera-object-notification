@@ -125,7 +125,7 @@
         "module": "cdktf_lorex_camera_object_notification"
       },
       "go": {
-        "moduleName": "ithub.com/briankanya/cdktf-lorex-camera-object-notification"
+        "moduleName": "github.com/briankanya/cdktf-lorex-camera-object-notification"
       }
     },
     "tsc": {
