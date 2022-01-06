@@ -4,7 +4,6 @@
 !/.projen/deps.json
 !/.projen/files.json
 !/.github/workflows/pull-request-lint.yml
-!/.devcontainer.json
 !/.github/workflows/stale.yml
 !/package.json
 !/LICENSE
@@ -37,7 +36,6 @@ jspm_packages/
 .DS_Store
 .gen
 .terraform*
-.vscode
 cdktf.json
 cdktf.out
 package-lock.json
@@ -62,4 +60,5 @@ junit.xml
 .jsii
 tsconfig.json
 !/API.md
+!/.devcontainer.json
 !/.github/workflows/upgrade-master.yml

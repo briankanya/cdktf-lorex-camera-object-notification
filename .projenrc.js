@@ -1,4 +1,4 @@
-const { cdktf } = require('projen');
+const { cdktf, vscode } = require('projen');
 
 const { ReleaseTrigger } = require('projen/lib/release');
 
@@ -21,7 +21,6 @@ const project = new cdktf.ConstructLibraryCdktf({
     '.DS_Store',
     '.gen',
     '.terraform*',
-    '.vscode',
     '/test/__snapshots__/',
     'cdktf.json',
     'cdktf.out',
@@ -29,7 +28,6 @@ const project = new cdktf.ConstructLibraryCdktf({
     'terraform*',
     'yarn.lock',
   ],
-  devContainer: true,
   keywords: ['cdktf', 'lorex', 'camera', 'object', 'notification'],
   license: 'GPL-3.0-or-later',
   name: 'cdktf-lorex-camera-object-notification',
@@ -44,5 +42,19 @@ const project = new cdktf.ConstructLibraryCdktf({
   releaseTrigger: ReleaseTrigger.continuous(),
   repositoryUrl: 'https://github.com/briankanya/cdktf-lorex-camera-object-notification.git',
 });
+
+const devContainer = new vscode.DevContainer(project, {
+  dockerImage: {
+    image: 'mcr.microsoft.com/vscode/devcontainers/typescript-node:16-bullseye',
+  },
+  tasks: [
+    {
+      command: 'yarn install',
+      name: 'setup',
+    }
+  ],
+});
+
+devContainer.synthesize();
 
 project.synth();
