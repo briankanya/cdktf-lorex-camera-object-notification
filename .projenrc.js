@@ -49,8 +49,7 @@ const devContainer = new vscode.DevContainer(project, {
   },
   tasks: [
     {
-      command: 'yarn install',
-      name: 'setup',
+      name: 'upgrade',
     }
   ],
 });
