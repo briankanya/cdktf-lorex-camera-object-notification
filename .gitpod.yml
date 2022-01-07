@@ -18,9 +18,6 @@ vscode:
     - github.copilot
     - golang.go
     - hashicorp.terraform
-    - ms-python.python
-    - ms-python.vscode-pylance
     - ms-vsliveshare.vsliveshare
-    - sonarsource.sonarlint-vscode
     - timonwong.shellcheck
     - visualstudioexptteam.vscodeintellicode
