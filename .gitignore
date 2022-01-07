@@ -61,4 +61,5 @@ junit.xml
 tsconfig.json
 !/API.md
 !/.devcontainer.json
+!/.gitpod.yml
 !/.github/workflows/upgrade-master.yml

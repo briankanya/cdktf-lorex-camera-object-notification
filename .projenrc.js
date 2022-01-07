@@ -1,4 +1,4 @@
-const { cdktf, vscode } = require('projen');
+const { cdktf, vscode, Gitpod } = require('projen');
 
 const { ReleaseTrigger } = require('projen/lib/release');
 
@@ -43,17 +43,44 @@ const project = new cdktf.ConstructLibraryCdktf({
   repositoryUrl: 'https://github.com/briankanya/cdktf-lorex-camera-object-notification.git',
 });
 
+const setup = project.addTask("devenv:setup");
+setup.exec("yarn install");
+setup.spawn(project.buildTask);
+
 const devContainer = new vscode.DevContainer(project, {
   dockerImage: {
     image: 'mcr.microsoft.com/vscode/devcontainers/typescript-node:16-bullseye',
   },
-  tasks: [
-    {
-      name: 'upgrade',
-    }
+  vscodeExtensions: [
+    'dbaeumer.vscode-eslint',
+    'eamodio.gitlens',
+    'esbenp.prettier-vscode',
+    'github.copilot',
+    'golang.go',
+    'hashicorp.terraform',
+    'ms-python.python',
+    'ms-python.vscode-pylance',
+    'ms-vsliveshare.vsliveshare',
+    'sonarsource.sonarlint-vscode',
+    'timonwong.shellcheck',
+    'visualstudioexptteam.vscodeintellicode',
   ],
+  tasks: [setup],
 });
 
 devContainer.synthesize();
+
+const gitpod = new Gitpod(project, {
+  dockerImage: devContainer.dockerImage,
+  prebuilds: {
+    addBadge: true,
+    addCheck: true,
+    addComment: true,
+    addLabel: true,
+  },
+  tasks: [setup],
+  vscodeExtensions: devContainer.vscodeExtensions,
+});
+gitpod.synthesize();
 
 project.synth();
